@@ -32,6 +32,7 @@ def get_occupation(data, hometown)
     val.each do |ele|
       if ele["hometown"] == hometown && !out
         out = ele["occupation"]
+      end
     end
   end
   out
