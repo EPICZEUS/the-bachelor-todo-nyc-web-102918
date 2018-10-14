@@ -29,9 +29,10 @@ end
 def get_occupation(data, hometown)
   out = nil
   data.each do |key, val|
-    out = val.find do |ele|
-      ele["hometown"] == hometown
-    end["occupation"]
+    val.each do |ele|
+      if ele["hometown"] == hometown && !out
+        out = ele["occupation"]
+    end
   end
   out
 end
